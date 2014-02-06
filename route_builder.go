@@ -29,8 +29,8 @@ type RouteBuilder struct {
 // To bind the route to a function.
 // If this route is matched with the incoming Http Request then call this function with the *Request,*Response pair. Required.
 func (b *RouteBuilder) To(function RouteFunction) *RouteBuilder {
-	b.function = go function
-	return b
+	b.function = function
+	return go b
 }
 
 // Method specifies what HTTP method to match. Required.
