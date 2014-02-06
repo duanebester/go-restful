@@ -18,7 +18,7 @@ func (f *FilterChain) ProcessFilter(request *Request, response *Response) {
 		f.Index++
 		f.Filters[f.Index-1](request, response, f)
 	} else {
-		f.Target(request, response)
+		go f.Target(request, response)
 	}
 }
 
